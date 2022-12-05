@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-blog"
-version = "1.0.0"
+version = "0.1.0-alpha"
 description = "My personal blog built using FastAPI."
 authors = ["Gabriel <gbrcenciati@gmail.com>"]
 license = "MIT"
