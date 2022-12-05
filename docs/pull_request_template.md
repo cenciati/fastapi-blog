@@ -1,4 +1,10 @@
+## What is the scope of this change?
+
 ## Describe your changes
+
+## Does this change affect any open issues?
+
+## Are there any breaking changes?
 
 ## Checklist before requesting a review
 - [ ] I have performed a self-review of my code
