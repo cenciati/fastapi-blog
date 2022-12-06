@@ -1,0 +1,26 @@
+- users
+    - sign in
+        - verify e-mail
+        - verify password
+    - sign up
+        - prevent duplicate user per e-mail
+        - prevent weak passwords
+            - [ ] hash password
+            - must contains
+                - [ ] at least 1 uppercase letter
+                - [ ] at least 1 lowercase letter
+                - [ ] at least 1 number
+                - [ ] at least 1 special character
+                - [ ] at least 8 characters
+                - [ ] at most 16 characters
+- posts
+    - [ ] middleware for auth
+    - read
+        - give feedback
+            - [ ] comment
+            - [ ] upvote
+            - [ ] downvote
+    - create
+    - delete
+    - edit
+        - [ ] display *last modified* date
