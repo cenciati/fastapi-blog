@@ -10,8 +10,6 @@ __pycache__/
 *.pyc
 .venv/
 Pipfile.lock
-.vs/
-.vscode/
 *.csv
 *.parquet
 *.feather
@@ -25,3 +23,4 @@ Pipfile.lock
 *.pickle
 *.joblib
 .env
+.coverage
