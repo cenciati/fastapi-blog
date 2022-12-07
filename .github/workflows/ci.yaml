@@ -29,10 +29,6 @@ jobs:
       shell: bash
       run: python -m poetry install --no-root
 
-    - name: Active poetry shell
-      shell: bash
-      run: python -m poetry shell
-
     - name: Run formatters and linters
       shell: bash
       run: make lint
