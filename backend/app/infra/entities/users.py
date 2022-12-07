@@ -15,9 +15,7 @@ class User(Base):
     name = Column(String(80), nullable=False)
     email = Column(String, nullable=False, unique=True)
     password = Column(String(16), nullable=False)
-    created_at = Column(
-        DateTime(timezone=True), nullable=False, server_default=func.now()
-    )
+    created_at = Column(DateTime(timezone=True), nullable=False, server_default=func.now())
     id_post = relationship("Post")  # type: ignore
 
     def __repr__(self) -> str:
