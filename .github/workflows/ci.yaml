@@ -33,6 +33,10 @@ jobs:
       shell: bash
       run: python -m poetry install
 
+    - name: Active poetry
+      shell: bash
+      run: python -m poetry shell
+
     - name: Run formatters and linters
       shell: bash
       run: make lint
