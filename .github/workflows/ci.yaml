@@ -31,8 +31,14 @@ jobs:
 
     - name: Run formatters and linters
       shell: bash
-      run: make lint
+      run: |
+        python -m poetry run autoflake backend/app
+        python -m poetry run isort backend/app
+        python -m poetry run black backend/app
+        python -m poetry run mypy backend/app
+        python -m poetry run pylint backend/app
+        python -m poetry run flake8 backend/app
 
     - name: Run tests
       shell: bash
-      run: make tests
+      run: python -m poetry run pytest backend/tests
