@@ -10,7 +10,7 @@ jobs:
       fail-fast: true
       matrix:
         python-version: ["3.10"]
-        poetry-version: ["1.2.2"]
+        poetry-version: ["1.2"]
 
     steps:
     - uses: actions/checkout@v3
@@ -21,19 +21,15 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Set up poetry
-      uses: abatilo/actions-poetry@v2.2.0
+      uses: abatilo/actions-poetry@v2
       with:
         poetry-version: ${{ matrix.poetry-version }}
-
-    - name: Configure poetry
-      shell: bash
-      run: python -m poetry config virtualenvs.in-project true
 
     - name: Install dependencies
       shell: bash
       run: python -m poetry install
 
-    - name: Active poetry
+    - name: Active poetry shell
       shell: bash
       run: python -m poetry shell
 
