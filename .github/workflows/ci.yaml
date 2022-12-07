@@ -29,21 +29,9 @@ jobs:
       shell: bash
       run: python -m poetry config virtualenvs.in-project true
 
-    - name: Set up cache
-      uses: actions/cache@v2
-      id: cache
-      with:
-        path: .venv
-        key: venv-${{ hashFiles('**/poetry.lock') }}
-
-    - name: Ensure cache health
-      if: steps.cache.outputs.cache-hit == 'true'
-      shell: bash
-      run: timeout 10s python -m poetry run pip --version || rm -rf .venv
-
     - name: Install dependencies
       shell: bash
-      run: poetry install
+      run: python -m poetry install
 
     - name: Run formatters and linters
       shell: bash
