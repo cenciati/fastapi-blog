@@ -11,8 +11,6 @@ jobs:
       matrix:
         python-version: ["3.10"]
         poetry-version: ["1.2.2"]
-        app_path: ["backend/app"]
-        tests_path: ["backend/tests"]
 
     steps:
     - uses: actions/checkout@v3
@@ -34,13 +32,13 @@ jobs:
     - name: Run formatters and linters
       shell: bash
       run: |
-        poetry run autoflake ${{ matrix.app_path }}
-        poetry run isort ${{ matrix.app_path }}
-        poetry run black ${{ matrix.app_path }}
-        poetry run mypy ${{ matrix.app_path }}
-        poetry run pylint ${{ matrix.app_path }}
-        poetry run flake8 ${{ matrix.app_path }}
+        poetry run autoflake .
+        poetry run isort .
+        poetry run black .
+        poetry run mypy .
+        poetry run pylint .
+        poetry run flake8 .
 
     - name: Run tests
       shell: bash
-      run: poetry run pytest ${{ matrix.tests_path }}
+      run: poetry run pytest .
