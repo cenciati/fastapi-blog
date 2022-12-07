@@ -1,8 +1,7 @@
 from datetime import datetime
 
-from app.infra.entities.users import UserModel
-
 import pytest
+from app.infra.entities.users import UserModel
 
 
 @pytest.fixture

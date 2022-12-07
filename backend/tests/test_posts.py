@@ -1,8 +1,7 @@
 from datetime import datetime
 
-from app.infra.entities.posts import PostModel
-
 import pytest
+from app.infra.entities.posts import PostModel
 
 
 @pytest.fixture
