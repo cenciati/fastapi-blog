@@ -10,7 +10,7 @@ jobs:
       fail-fast: true
       matrix:
         python-version: ["3.10"]
-        poetry-version: ["1.2"]
+        poetry-version: ["1.2.2"]
 
     steps:
     - uses: actions/checkout@v3
@@ -27,11 +27,11 @@ jobs:
 
     - name: Install dependencies
       shell: bash
-      run: poetry install
+      run: python -m poetry install --no-root
 
     - name: Active poetry shell
       shell: bash
-      run: poetry shell
+      run: python -m poetry shell
 
     - name: Run formatters and linters
       shell: bash
