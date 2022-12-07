@@ -27,7 +27,7 @@ jobs:
 
     - name: Install dependencies
       shell: bash
-      run: python -m poetry install
+      run: cd ../ && python -m poetry install
 
     - name: Active poetry shell
       shell: bash
