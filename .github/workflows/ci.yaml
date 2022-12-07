@@ -31,8 +31,7 @@ jobs:
 
     - name: Run formatters and linters
       shell: bash
-      run: |
-        poetry run autoflake .
+      run: poetry run autoflake .
       # poetry run isort .
       # poetry run black .
       # poetry run mypy .
