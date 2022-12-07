@@ -32,13 +32,13 @@ jobs:
     - name: Run formatters and linters
       shell: bash
       run: |
-        python -m poetry run autoflake backend/app
-        python -m poetry run isort backend/app
-        python -m poetry run black backend/app
-        python -m poetry run mypy backend/app
-        python -m poetry run pylint backend/app
-        python -m poetry run flake8 backend/app
+        poetry run autoflake backend/app
+        poetry run isort backend/app
+        poetry run black backend/app
+        poetry run mypy backend/app
+        poetry run pylint backend/app
+        poetry run flake8 backend/app
 
     - name: Run tests
       shell: bash
-      run: python -m poetry run pytest backend/tests
+      run: poetry run pytest backend/tests
