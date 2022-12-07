@@ -47,7 +47,7 @@ jobs:
 
     - name: Run autoflake
       shell: bash
-      run: python -m poetry run python -m autoflake .
+      run: python -m poetry run python -m isort --check .
 
     - name: Run tests
       shell: bash
