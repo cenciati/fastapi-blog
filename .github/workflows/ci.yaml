@@ -43,7 +43,7 @@ jobs:
 
     - name: Install dependencies
       shell: bash
-      run: python -m poetry install
+      run: poetry install
 
     - name: Run formatters and linters
       shell: bash
