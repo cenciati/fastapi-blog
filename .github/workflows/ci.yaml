@@ -27,11 +27,11 @@ jobs:
 
     - name: Install dependencies
       shell: bash
-      run: cd ../ && python -m poetry install
+      run: poetry install
 
     - name: Active poetry shell
       shell: bash
-      run: python -m poetry shell
+      run: poetry shell
 
     - name: Run formatters and linters
       shell: bash
