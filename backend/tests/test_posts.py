@@ -1,11 +1,11 @@
 from datetime import datetime
 
 import pytest
-from app.infra.entities.posts import PostModel
+from app.infra.entities.posts_entity import PostModel
 
 
 @pytest.fixture
-def post_example():
+def post_example() -> PostModel:
     return PostModel(
         id=1,
         title="How to...",
@@ -16,7 +16,9 @@ def post_example():
     )
 
 
-def test_post_data_format_to_dictionary(post_example):
+def test_post_data_format_to_dictionary(
+    post_example: PostModel,  # pylint: disable=redefined-outer-name
+) -> None:
     assert post_example.dict() == {
         "id": 1,
         "title": "How to...",

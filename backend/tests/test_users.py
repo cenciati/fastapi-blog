@@ -1,11 +1,11 @@
 from datetime import datetime
 
 import pytest
-from app.infra.entities.users import UserModel
+from app.infra.entities.users_entity import UserModel
 
 
 @pytest.fixture
-def user_example():
+def user_example() -> UserModel:
     return UserModel(
         id=1,
         name="Mark",
@@ -15,7 +15,9 @@ def user_example():
     )
 
 
-def test_user_data_format_to_dictionary(user_example):
+def test_user_data_format_to_dictionary(
+    user_example: UserModel,  # pylint: disable=redefined-outer-name
+):
     assert user_example.dict() == {
         "id": 1,
         "name": "Mark",
