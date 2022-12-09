@@ -16,12 +16,11 @@ help:
 	@echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 lint:
-	${PYTHON} -m autoflake ${FILES_PATH}
-	${PYTHON} -m isort ${FILES_PATH}
-	${PYTHON} -m black ${FILES_PATH}
-	${PYTHON} -m mypy ${FILES_PATH}
-	${PYTHON} -m pylint ${FILES_PATH}
-	${PYTHON} -m flake8 ${FILES_PATH}
+	${PYTHON} -m isort ${FILES_PATH} ${TESTS_PATH}
+	${PYTHON} -m black ${FILES_PATH} ${TESTS_PATH}
+	${PYTHON} -m mypy ${FILES_PATH} ${TESTS_PATH}
+	${PYTHON} -m pylint ${FILES_PATH} ${TESTS_PATH}
+	${PYTHON} -m flake8 ${FILES_PATH} ${TESTS_PATH}
 
 test:
 	${PYTHON} -m pytest ${TESTS_PATH}
