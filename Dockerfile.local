@@ -32,7 +32,7 @@ USER local
 
 WORKDIR /home/local/fastapi-blog
 
-COPY . .
+# COPY . .
 
 # Install dependencies
 ARG INSTALL_DEV=true
