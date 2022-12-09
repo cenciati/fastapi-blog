@@ -5,7 +5,6 @@ description = "My personal blog built using FastAPI."
 authors = ["Gabriel <gbrcenciati@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "fastapi_blog"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -28,21 +27,11 @@ pytest = "^7.2.0"
 pytest-cov = "^4.0.0"
 sqlalchemy-stubs = "^0.4"
 faker = "^15.3.4"
+flake8-pyproject = "^1.2.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.autoflake]
-check = false
-in-place = true
-recursive = true
-expand-star-imports = true
-ignore-init-module-imports = true
-remove-duplicate-keys = true
-remove-all-unused-imports = true
-remove-unused-variables = true
-verbose = 0
 
 [tool.isort]
 atomic = true
@@ -56,14 +45,13 @@ line-length = 88
 [tool.mypy]
 ignore_missing_imports = true
 
-[tool.pylint]
+[tool.pylint.'MESSAGES CONTROL']
 max-line-length = 88
-exclude = [".venv/"]
-disable = ["C0114", "R0903"]
+disable = ["C0114", "C0116", "R0903"]
 
 [tool.flake8]
 max-line-length = 88
-extend-ignore = ["W503", "E501"]
+extend-ignore = ["W503"]
 exclude = [".venv/"]
 per-file-ignores = "__init__.py: F401"
 
