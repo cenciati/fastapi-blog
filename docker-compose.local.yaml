@@ -31,23 +31,17 @@ services:
       - db
     restart: on-failure
 
-  backend:
+  app:
     build:
       context: .
       dockerfile: Dockerfile.local
-    container_name: backend
+    container_name: app
     ports:
       - 8000:8000
     volumes:
       - ./backend/app:/app
     networks:
       - app-db-network
-    environment:
-      - DB_USER=admin
-      - DB_PASSWORD=admin
-      - DB_HOST=localhost
-      - DB_PORT=5432
-      - DB_DATABASE_NAME=blog
     entrypoint: dockerize -wait tcp://db:5432 -timeout 20s docker-entrypoint.sh
     depends_on:
       - db
