@@ -44,7 +44,7 @@ def test_insert_one_new_user(
     assert new_user.password == query_user.password
 
 
-def test_select_one_user_by_email(
+def test_select_one_user(
     user_repository: UserRepository,  # pylint: disable=redefined-outer-name
     db_connection: DBConnectionHandler,  # pylint: disable=redefined-outer-name
 ) -> None:
