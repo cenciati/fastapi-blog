@@ -5,7 +5,7 @@ from pydantic import BaseModel  # pylint: disable=no-name-in-module
 
 
 class PostModel(BaseModel):
-    """Post data format"""
+    """Post data format."""
 
     id: Optional[int]
     title: str

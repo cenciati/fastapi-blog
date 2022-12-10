@@ -7,17 +7,15 @@ from pydantic import EmailStr  # pylint: disable=no-name-in-module
 
 
 class UserRepository:
-    """Manages user repository"""
+    """Manages user repository."""
 
     @classmethod
     def insert_one(cls, name: str, email: EmailStr, password: str) -> UserModel:
         """Insert data into user entity.
-
         Args:
-            name (str): User name
-            email (EmailStr): User email
-            password (str): User password
-
+            name (str): User name.
+            email (EmailStr): User email.
+            password (str): User password.
         Return:
             User added model.
         """
@@ -39,10 +37,8 @@ class UserRepository:
         cls, user_id: Optional[int] = None, user_email: Optional[EmailStr] = None
     ) -> UserModel:
         """Select user by id.
-
         Args:
             user_id (int): User unique identifier.
-
         Return:
             List containing user with specified ID.
         """

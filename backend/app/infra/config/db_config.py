@@ -25,7 +25,6 @@ class DBConnectionHandler:
     def get_engine(self) -> Engine:
         """Creates a connection engine using a database
         connection string.
-
         Return:
             Connection engine.
         """

@@ -18,9 +18,11 @@ class User(Base):
 
     def __repr__(self) -> str:
         return f"""
-            <User(name={self.name},
+            <User(id={self.id},
+            name={self.name},
             email={self.email},
-            password={self.password})>
+            password={self.password},
+            created_at={self.created_at})>
             """
 
     def __eq__(self, other):

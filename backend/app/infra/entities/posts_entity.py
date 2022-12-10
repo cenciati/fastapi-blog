@@ -21,9 +21,11 @@ class Post(Base):
 
     def __repr__(self) -> str:
         return f"""
-            <Post(title={self.title},
-            content={self.content})>
-
+            <Post(id={self.id},
+            title={self.title},
+            content={self.content},
+            published={self.published},
+            created_at={self.created_at})>
             """
 
     def __eq__(self, other):
