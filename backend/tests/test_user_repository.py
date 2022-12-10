@@ -1,5 +1,5 @@
 import pytest
-from app.infra.entities.users_entity import UserModel
+from app.domain.models.user_model import UserModel
 from app.infra.repo.user_repository import UserRepository
 from faker import Faker
 from pydantic import EmailStr  # pylint: disable=no-name-in-module
