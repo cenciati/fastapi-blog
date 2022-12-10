@@ -20,6 +20,8 @@ repos:
     hooks:
       - id: flake8
         name: lint code (flake8)
+        entry: pflake8
+        additional_dependencies: [pyproject-flake8]
   - repo: local
     hooks:
       - id: pytest
