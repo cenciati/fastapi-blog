@@ -25,3 +25,12 @@ class Post(Base):
             content={self.content})>
 
             """
+
+    def __eq__(self, other):
+        return (
+            self.id == other.id
+            and self.title == other.title
+            and self.content == other.content
+            and self.published == other.published
+            and self.created_at == other.created_at
+        )
