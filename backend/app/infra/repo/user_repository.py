@@ -17,7 +17,7 @@ class UserRepository:
             email (EmailStr): User email.
             password (str): User password.
         Return:
-            User added model.
+            Data model of the added user.
         """
 
         with DBConnectionHandler() as db_connection:
@@ -36,11 +36,12 @@ class UserRepository:
     def select_one(
         cls, user_id: Optional[int] = None, user_email: Optional[EmailStr] = None
     ) -> UserModel:
-        """Select user by id.
+        """Select user by id or email.
         Args:
             user_id (int): User unique identifier.
+            user_email (EmailStr): User registred email.
         Return:
-            List containing user with specified ID.
+            User data model containing specified user.
         """
         try:
             with DBConnectionHandler() as db_connection:
@@ -56,14 +57,13 @@ class UserRepository:
                     )
                 else:
                     raise ValueError
-                query_user = UserModel(
-                    id=query_result.id,
-                    name=query_result.name,
-                    email=query_result.email,
-                    password=query_result.password,
-                    created_at=query_result.created_at,
-                )
-            return query_user
+            return UserModel(
+                id=query_result.id,
+                name=query_result.name,
+                email=query_result.email,
+                password=query_result.password,
+                created_at=query_result.created_at,
+            )
         except Exception as exc:
             db_connection.session.rollback()
             raise ConnectionError from exc
