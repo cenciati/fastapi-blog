@@ -1,6 +1,7 @@
 from app.domain.models.post_model import PostModel
 from app.domain.models.user_model import UserModel
 from app.infra.config.db_config import DBConnectionHandler
+from app.infra.repo.post_repository import PostRepository
 from app.infra.repo.user_repository import UserRepository
 from faker import Faker
 from pytest import fixture
@@ -41,3 +42,8 @@ def post_model_example() -> PostModel:
 @fixture(scope="session")
 def user_repository():
     return UserRepository()
+
+
+@fixture(scope="session")
+def post_repository():
+    return PostRepository()

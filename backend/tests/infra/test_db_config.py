@@ -1,5 +1,4 @@
 from app.infra.config.db_config import DB_HOST, DB_NAME, DB_PASSWORD, DB_USER
-from pytest import mark
 from sqlalchemy.engine import Engine
 
 
