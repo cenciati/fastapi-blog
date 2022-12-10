@@ -10,6 +10,6 @@ class PostModel(BaseModel):
     id: Optional[int]
     title: str
     content: str
-    published: bool
+    published: Optional[bool]
     created_at: Optional[datetime]
     updated_at: Optional[datetime]
