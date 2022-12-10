@@ -1,8 +1,4 @@
-from datetime import datetime
-from typing import Optional
-
 from app.infra.config.db_base_config import Base
-from pydantic import BaseModel  # pylint: disable=no-name-in-module
 from sqlalchemy import Boolean, Column, DateTime, Integer, String
 from sqlalchemy.sql import func
 
@@ -27,15 +23,5 @@ class Post(Base):
         return f"""
             <Post(title={self.title},
             content={self.content})>
+
             """
-
-
-class PostModel(BaseModel):
-    """Post data format"""
-
-    id: Optional[int]
-    title: str
-    content: str
-    published: bool
-    created_at: Optional[datetime]
-    updated_at: Optional[datetime]
