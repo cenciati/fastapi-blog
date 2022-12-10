@@ -22,3 +22,12 @@ class User(Base):
             email={self.email},
             password={self.password})>
             """
+
+    def __eq__(self, other):
+        return (
+            self.id == other.id
+            and self.name == other.name
+            and self.email == other.name
+            and self.password == other.password
+            and self.created_at == other.created_at
+        )
