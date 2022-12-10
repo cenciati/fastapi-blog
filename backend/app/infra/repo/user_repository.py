@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Optional
 
 from app.domain.models.user_model import UserModel
 from app.infra.config.db_config import DBConnectionHandler
@@ -37,7 +37,7 @@ class UserRepository:
     @classmethod
     def select_one(
         cls, user_id: Optional[int] = None, user_email: Optional[EmailStr] = None
-    ) -> List[UserModel]:
+    ) -> UserModel:
         """Select user by id.
 
         Args:
@@ -49,11 +49,11 @@ class UserRepository:
         try:
             with DBConnectionHandler() as db_connection:
                 if user_id is not None:
-                    query_result: User = (
+                    query_result = (
                         db_connection.session.query(User).filter_by(id=user_id).one()
                     )
                 elif user_email is not None:
-                    query_result: User = (
+                    query_result = (
                         db_connection.session.query(User)
                         .filter_by(email=user_email)
                         .one()
