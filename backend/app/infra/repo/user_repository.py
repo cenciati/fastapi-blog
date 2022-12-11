@@ -1,12 +1,13 @@
 from typing import Optional
 
+from app.data.interfaces.user_repository_interface import UserRepositoryInterface
 from app.domain.models.user_model import UserModel
 from app.infra.config.db_config import DBConnectionHandler
 from app.infra.entities.users_entity import User
 from pydantic import EmailStr  # pylint: disable=no-name-in-module
 
 
-class UserRepository:
+class UserRepository(UserRepositoryInterface):
     """Manages user repository."""
 
     @classmethod

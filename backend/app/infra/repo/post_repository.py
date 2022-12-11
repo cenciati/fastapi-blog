@@ -1,11 +1,12 @@
 from typing import Optional
 
+from app.data.interfaces.post_repository_interface import PostRepositoryInterface
 from app.domain.models.post_model import PostModel
 from app.infra.config.db_config import DBConnectionHandler
 from app.infra.entities.posts_entity import Post
 
 
-class PostRepository:
+class PostRepository(PostRepositoryInterface):
     """Manages post repository."""
 
     @classmethod
